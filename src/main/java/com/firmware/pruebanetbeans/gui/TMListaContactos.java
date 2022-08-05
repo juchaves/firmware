@@ -34,24 +34,24 @@ public class TMListaContactos implements TableModel{
 
     @Override
     public String getColumnName(int columnIndex) {
-        return switch (columnIndex) {
-            case 0 -> "Nombre";
-            case 1 -> "Telefono";
-            case 2 -> "Direccion";
-            case 3 -> "Identificacion";
-            default -> "-";
-        };
+        switch (columnIndex) {
+            case 0 : return "Nombre";
+            case 1 : return "Telefono";
+            case 2 : return "Direccion";
+            case 3 : return "Identificacion";
+            default : return "-";
+        }
     }
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-        return switch (columnIndex) {
-            case 0 -> String.class;
-            case 1 -> Long.class;
-            case 2 -> String.class;
-            case 3 -> Long.class;
-            default -> String.class;
-        };
+        switch (columnIndex) {
+            case 0 : return String.class;
+            case 1 : return Long.class;
+            case 2 : return String.class;
+            case 3 : return Long.class;
+            default : return String.class;
+        }
     }
 
     @Override
@@ -61,13 +61,13 @@ public class TMListaContactos implements TableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        return switch (columnIndex) {
-            case 0 -> lista.get(rowIndex).nombre();
-            case 1 -> lista.get(rowIndex).telefono();
-            case 2 -> lista.get(rowIndex).direccion();
-            case 3 -> lista.get(rowIndex).identificacion();
-            default -> "";
-        };
+        switch (columnIndex) {
+            case 0 : return lista.get(rowIndex).nombre();
+            case 1 : return lista.get(rowIndex).telefono();
+            case 2 : return lista.get(rowIndex).direccion();
+            case 3 : return lista.get(rowIndex).identificacion();
+            default : return "";
+        }
     }
 
     @Override
